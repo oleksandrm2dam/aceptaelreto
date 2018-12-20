@@ -9,12 +9,9 @@ public class Main2 {
 		calcular(readList2());	
 	}
 	
-	static String newLine = "\n";
-	
 	public static void calcular(LinkedList<String[]> list) {
 		StringBuilder sb = new StringBuilder();
 		int numGrupos, menorGrupo, mayorGrupo, grupoActual;
-		
 		for(String[] arr : list) {
 			numGrupos = 0;
 			menorGrupo = arr.length;
@@ -47,11 +44,9 @@ public class Main2 {
 				menorGrupo = grupoActual;
 			}
 			
-			sb.append(numGrupos + " " +  menorGrupo + " " +  mayorGrupo + newLine);
-			
+			sb.append(numGrupos + " " +  menorGrupo + " " +  mayorGrupo + "\n");
 		}
-		
-		System.out.println(sb.toString());
+		System.out.print(sb.toString());
 	}
 
 	public static LinkedList<String[]> readList() {
@@ -79,6 +74,5 @@ public class Main2 {
 		list.add(new String[] {"10", "15", "18", "2", "4", "6", "20"});
 		return list;
 	}
-	
 	
 }

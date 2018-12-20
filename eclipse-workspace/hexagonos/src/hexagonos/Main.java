@@ -1,40 +1,49 @@
 package hexagonos;
 
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
-
-	static LinkedList<String[]> list = new LinkedList<String[]>();
 	
 	public static void main(String[] args) {
-		
-		readList2();
-		
-		
-		
-	}
-	
-	public static void readList() {
 		Scanner scanner = new Scanner(System.in);
-		String linea;
+		String answ;
+		String[] arr;
+		String dibujo;
+		int n;
+		String chara;
 		do {
-			linea = scanner.nextLine();
-			if (!linea.equals("0 0")) {
-				list.add(linea.split(" "));
+			answ = scanner.nextLine();
+			if (!answ.equals("0 0")) {
+				arr = answ.split(" ");
+				n = Integer.parseInt(arr[0]);
+				chara = arr[1];
+				dibujo = "";
+				for(int i = 0; i < n; ++i) {
+					for(int j = 0; j < (n - 1) - i; ++j) {
+						dibujo += " ";
+					}
+					for(int j = 0; j < n + i * 2; ++j) {
+						dibujo += chara;
+					}
+					for(int j = 0; j < (n - 1) - i; ++j) {
+						dibujo += " ";
+					}
+					dibujo += "\n";
+				}
+				
+				for(int i = 1; i < n; ++i) {
+					for(int j = 0; j < n + i * 2; ++j) {
+						dibujo += " ";
+					}
+					dibujo += "p";
+					dibujo += "\n";
+				}
+				
+				System.out.print(dibujo);
 			}
-			
-		} while (!linea.equals("0 0"));
-		scanner.close();
-	}
-	
-	public static void readList2() {
-		list.add(new String[] {"3", "*"});
-		list.add(new String[] {"4", "p"});
-	}
-	
-	public static void calcular() {
+		} while (!answ.equals("0 0"));
 		
+		scanner.close();
 	}
 
 }
