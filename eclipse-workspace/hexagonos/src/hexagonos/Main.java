@@ -25,6 +25,7 @@ public class Main {
 			}
 			
 		} while (!linea.equals("0 0"));
+		scanner.close();
 	}
 	
 	public static void readList2() {

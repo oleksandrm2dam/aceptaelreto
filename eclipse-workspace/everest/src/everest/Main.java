@@ -9,7 +9,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		readList();
+		list = readList2();
 		
 		int[][] calculo = calcular();
 		for(int i = 0; i < calculo.length; ++i) {
@@ -32,6 +32,7 @@ public class Main {
 				list.add(temp);
 			}
 		} while (!longitud.equals("0"));
+		scanner.close();
 	}
 	
 	public static int[][] calcular() {
@@ -67,6 +68,13 @@ public class Main {
 			++i;
 		}
 		return output;
+	}
+	
+	public static LinkedList<int[]> readList2() {
+		LinkedList<int[]> list = new LinkedList<int[]>();
+		list.add(new int[] {10, 11, 4, 5, 6, 1});
+		list.add(new int[] {10, 15, 18, 2, 4, 6, 20});
+		return list;
 	}
 
 }
