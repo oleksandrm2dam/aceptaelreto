@@ -9,7 +9,7 @@ public class Main2 {
 		calcular(readList2());	
 	}
 	
-	static String newLine = System.getProperty("line.separator");
+	static String newLine = "\n";
 	
 	public static void calcular(LinkedList<String[]> list) {
 		StringBuilder sb = new StringBuilder();
